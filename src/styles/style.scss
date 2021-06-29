@@ -1,0 +1,26 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+// html{
+//     font-family: 'Nunito', sans-serif;
+//     font-size: 62.5%;
+// }
+
+// Paleta de Colores 
+
+$negro-mate: #393E46;
+
+
+// Carrusel o Slider 
+.carrusel-container{
+    background-color: $negro-mate;
+    .carousel-control-prev{
+        display: none;
+    }
+    .carousel-control-next{
+        display: none;
+    }
+}

@@ -1,0 +1,19 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.carrusel-container {
+  background-color: #393E46;
+}
+
+.carrusel-container .carousel-control-prev {
+  display: none;
+}
+
+.carrusel-container .carousel-control-next {
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */
