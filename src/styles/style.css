@@ -16,4 +16,141 @@
 .carrusel-container .carousel-control-next {
   display: none;
 }
+
+@media (min-width: 992px) {
+  .carrusel-container .carousel-inner {
+    height: 250px;
+  }
+}
+
+.main-container {
+  height: 100vh;
+  background-color: #E5E5E5;
+}
+
+@media (max-width: 360px) {
+  .main-container {
+    height: auto;
+  }
+}
+
+.main-container .title-container {
+  margin-top: 15px;
+}
+
+.main-container .comic-title {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+@media (min-width: 992px) {
+  .main-container .comic-title {
+    font-size: 60px;
+  }
+}
+
+.main-container .description-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.main-container .description-container p {
+  font-size: 16px;
+  color: #948f8c;
+}
+
+.main-container .comic-description {
+  color: #757575;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+@media (min-width: 992px) {
+  .main-container .comic-description {
+    margin: 20px 0px;
+    font-size: 25px;
+  }
+}
+
+.main-container .button-container {
+  padding: 5% 10%;
+}
+
+@media (min-width: 992px) {
+  .main-container .button-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.main-container .button-container .button-info {
+  -webkit-box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+          box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+  border-radius: 4px;
+  background-color: #FAF8F7;
+  color: #000000;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+@media (min-width: 992px) {
+  .main-container .button-container .button-info {
+    width: 80%;
+    padding: 20px;
+  }
+}
+
+.footer-container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 360px) {
+  .footer-container {
+    position: static;
+    background-color: #393E46;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width: 361px) {
+  .footer-container {
+    position: absolute;
+    bottom: 0;
+    background: #393E46;
+    width: 100%;
+    padding: 15px;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.footer-container .social-icon {
+  font-size: 20px;
+  color: #ffffff;
+  margin: 0 10px;
+}
+
+.chakra-modal__content {
+  background: #E5E5E5 !important;
+  margin: 50px 10px;
+  padding: 15px 10px;
+}
 /*# sourceMappingURL=style.css.map */

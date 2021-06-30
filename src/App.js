@@ -1,12 +1,12 @@
 import Home from "./containers/Home";
 import './styles/style.css'
-
+import { ChakraProvider } from "@chakra-ui/react"
 
 function App() {
   return (
-    <div className="App">
-        <Home/> 
-    </div>
+    <ChakraProvider className="App">
+      <Home/> 
+    </ChakraProvider>
   );
 }
 

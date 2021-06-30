@@ -17,13 +17,13 @@ const StyledTitleCarousel = styled.div`
         margin-left: 30px;
     }
     @media (min-width: 1200px){
-        font-size: 80px;
+        font-size: 60px;
         margin-top: 40px; 
         margin-left: 60px;
     }
     @media (min-width: 1400px){
-        font-size: 100px;
-        margin-top: 60px; 
+        font-size: 80px;
+        margin-top: 0px; 
         margin-left: 60px;
     }
 `
@@ -32,7 +32,8 @@ const StyledTitleCarousel = styled.div`
 const Header = () => {
     return (
         <div>
-            <Carousel className = 'carrusel-container'>
+            {/* Carousel Mobile */}
+            <Carousel className = 'carrusel-container d-lg-none'>
                 <Carousel.Item interval={2000}>
                     <img
                         className="d-block w-100"
@@ -48,8 +49,25 @@ const Header = () => {
                     />
                 </Carousel.Item>
             </Carousel>
+            {/* Carousel Desktop */}
+            <Carousel className = 'carrusel-container d-lg-block d-none'>
+                <Carousel.Item interval={2000} >
+                    <img
+                        className="d-block w-100 h-25"
+                        src="https://i.ibb.co/XXCP8Kz/slider-3.png"
+                        alt="First slide"
+                    />
+                </Carousel.Item>
+                <Carousel.Item interval={2000} >
+                    <img
+                        className="d-block w-100 h-25"
+                        src="https://i.ibb.co/LPFvgsM/slider-2.png"
+                        alt="Third slide"
+                    />
+                </Carousel.Item>
+            </Carousel>
             <StyledTitleCarousel>
-                Bienvenidos a <br/>
+                Welcome to <br/>
                 ComicApp</StyledTitleCarousel>
         </div>
     )

@@ -10,9 +10,12 @@
 // }
 
 // Paleta de Colores 
-
 $negro-mate: #393E46;
-
+$naranja-primary: #F98F12;
+$blanco-suave-claro: #FDFAF6;
+$blanco-suave: #E5E5E5;
+$blanco-secondary: #FAF8F7;
+$amarillo-primary: #FFC93C;
 
 // Carrusel o Slider 
 .carrusel-container{
@@ -23,4 +26,97 @@ $negro-mate: #393E46;
     .carousel-control-next{
         display: none;
     }
+    .carousel-inner{
+        @media (min-width: 992px){
+            height: 250px;
+        }
+    }
+}
+
+.main-container{
+    @media (max-width: 360px){
+        height: auto;
+    }
+    height: 100vh;
+    background-color: $blanco-suave;
+    .title-container{
+        margin-top: 15px;
+    }
+    .comic-title{
+        font-size: 30px;
+        font-weight: 700;
+        @media (min-width: 992px){
+            font-size: 60px;
+        }
+    }
+    .description-container{
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin-top: 10px;
+        p{
+            font-size: 16px;
+            color: #948f8c;
+        }
+    }
+    .comic-description{
+        color: #757575;
+        text-align: center;
+        font-size: 18px;
+        margin-top: 10px;
+        @media (min-width: 992px){
+            margin: 20px 0px;
+            font-size: 25px;
+        }
+    }
+    .button-container{
+        padding: 5% 10%;
+        @media (min-width: 992px){
+            display: flex;
+            justify-content: center;
+        }
+        .button-info{
+            box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+            border-radius: 4px;
+            background-color: $blanco-secondary;
+            color: #000000;
+            border: none;
+            font-weight: bold;
+            font-size: 16px;
+            @media (min-width: 992px){
+                width: 80%;
+                padding: 20px;
+            }
+        }
+    }
+}
+.footer-container{
+    justify-content: center;
+    @media (max-width: 360px){
+        position: static;
+        background-color: $negro-mate;
+        display: flex;
+
+    }
+    @media (min-width: 361px){
+        position: absolute;
+        bottom: 0;
+        background: $negro-mate;
+        width: 100%;
+        padding: 15px;
+        margin: 0;
+        display: flex;
+    }
+    .social-icon{
+        font-size: 20px;
+        color: #ffffff;
+        margin: 0 10px;
+    }
+}
+
+// Modal
+.chakra-modal__content{
+    background: #E5E5E5 !important;
+    margin: 50px 10px;
+    padding: 15px 10px;
 }
