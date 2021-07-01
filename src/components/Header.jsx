@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Navbar, Carousel } from 'react-bootstrap'
+import {Carousel } from 'react-bootstrap'
 import styled from 'styled-components'
 
 // Aplicación de Estilos utilizando Styled-components

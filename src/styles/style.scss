@@ -4,11 +4,6 @@
     box-sizing: border-box;
 }
 
-// html{
-//     font-family: 'Nunito', sans-serif;
-//     font-size: 62.5%;
-// }
-
 // Paleta de Colores 
 $negro-mate: #393E46;
 $naranja-primary: #F98F12;
@@ -55,14 +50,14 @@ $amarillo-primary: #FFC93C;
         padding: 0;
         margin-top: 10px;
         p{
-            font-size: 16px;
+            font-size: 13px;
             color: #948f8c;
         }
     }
     .comic-description{
         color: #757575;
         text-align: center;
-        font-size: 18px;
+        font-size: 15px;
         margin-top: 10px;
         @media (min-width: 992px){
             margin: 20px 0px;
@@ -71,6 +66,8 @@ $amarillo-primary: #FFC93C;
     }
     .button-container{
         padding: 5% 10%;
+        position: relative;
+        top: 10px;
         @media (min-width: 992px){
             display: flex;
             justify-content: center;
@@ -96,7 +93,7 @@ $amarillo-primary: #FFC93C;
         position: static;
         background-color: $negro-mate;
         display: flex;
-
+        padding: 10px;
     }
     @media (min-width: 361px){
         position: absolute;
@@ -119,4 +116,9 @@ $amarillo-primary: #FFC93C;
     background: #E5E5E5 !important;
     margin: 50px 10px;
     padding: 15px 10px;
+}
+
+// Estrellas
+.cursor-pointer{
+    cursor: pointer;
 }
