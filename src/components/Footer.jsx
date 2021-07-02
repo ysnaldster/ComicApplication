@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react"
 
 
-// Estilos Adicionales con Styled Components
+// Styles with Styled Components
 const StyledMainP = styled.p`
     color: #ffffff;
     font-weight: 600;

@@ -2,7 +2,7 @@ import React from 'react'
 import {Carousel } from 'react-bootstrap'
 import styled from 'styled-components'
 
-// Aplicación de Estilos utilizando Styled-components
+// Styles with Styled-components
 const StyledTitleCarousel = styled.div`
     position: absolute;
     top: 1px;
@@ -33,7 +33,7 @@ const Header = () => {
     return (
         <div>
             {/* Carousel Mobile */}
-            <Carousel className = 'carrusel-container d-lg-none'>
+            <Carousel className = 'carousel-primary-container d-lg-none'>
                 <Carousel.Item interval={2000}>
                     <img
                         className="d-block w-100"
@@ -50,7 +50,7 @@ const Header = () => {
                 </Carousel.Item>
             </Carousel>
             {/* Carousel Desktop */}
-            <Carousel className = 'carrusel-container d-lg-block d-none'>
+            <Carousel className = 'carousel-primary-container d-lg-block d-none'>
                 <Carousel.Item interval={2000} >
                     <img
                         className="d-block w-100 h-25"

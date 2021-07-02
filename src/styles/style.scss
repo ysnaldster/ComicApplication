@@ -4,23 +4,23 @@
     box-sizing: border-box;
 }
 
-// Paleta de Colores 
-$negro-mate: #393E46;
-$naranja-primary: #F98F12;
-$blanco-suave-claro: #FDFAF6;
-$blanco-suave: #E5E5E5;
-$blanco-secondary: #FAF8F7;
-$amarillo-primary: #FFC93C;
+// Colors
+$black-primary: #393E46;
+$orange-primary: #F98F12;
+$white-light: #FDFAF6;
+$white-primary: #E5E5E5;
+$white-secondary: #FAF8F7;
+$yellow-primary: #FFC93C;
 
-// Carrusel o Slider 
-.carrusel-container{
-    background-color: $negro-mate;
+// Carousel / Slider 
+.carousel-primary-container{
     .carousel-control-prev{
-        display: none;
+        display: none ;
     }
     .carousel-control-next{
-        display: none;
+        display: none ;
     }
+    background-color: $black-primary;
     .carousel-inner{
         @media (min-width: 992px){
             height: 250px;
@@ -33,7 +33,7 @@ $amarillo-primary: #FFC93C;
         height: auto;
     }
     height: 100vh;
-    background-color: $blanco-suave;
+    background-color: $white-primary;
     .title-container{
         margin-top: 15px;
     }
@@ -75,7 +75,7 @@ $amarillo-primary: #FFC93C;
         .button-info{
             box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
             border-radius: 4px;
-            background-color: $blanco-secondary;
+            background-color: $white-secondary;
             color: #000000;
             border: none;
             font-weight: bold;
@@ -91,14 +91,14 @@ $amarillo-primary: #FFC93C;
     justify-content: center;
     @media (max-width: 360px){
         position: static;
-        background-color: $negro-mate;
+        background-color: $black-primary;
         display: flex;
         padding: 10px;
     }
     @media (min-width: 361px){
         position: absolute;
         bottom: 0;
-        background: $negro-mate;
+        background: $black-primary;
         width: 100%;
         padding: 15px;
         margin: 0;
@@ -118,7 +118,7 @@ $amarillo-primary: #FFC93C;
     padding: 15px 10px;
 }
 
-// Estrellas
+// Stars
 .cursor-pointer{
     cursor: pointer;
 }

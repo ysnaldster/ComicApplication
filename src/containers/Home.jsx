@@ -4,7 +4,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import styled from 'styled-components'
-// Estilos 
+
+// Styles
 const StyledImgContainer = styled(Row)`
     display: flex; 
     justify-content: center;
@@ -25,8 +26,7 @@ const StyledImgResponsive = styled.img`
     @media (min-width: 1700px){
         width: 500px;
         height: 500px;
-    }
-    
+    }  
 `
 const StyledContainerDesktop = styled(Container)`
     justify-content: center;
@@ -46,7 +46,7 @@ const StyledStarContainer = styled.div`
 `
 
 
-const IconoEstrella = (props) => {
+const StarSVG = (props) => {
     const { fill = 'none' } = props;
     return (
         <div>
@@ -57,93 +57,93 @@ const IconoEstrella = (props) => {
     )
 }
 
-const Calificacion = (props) => {
+const Rate = (props) => {
     const {
         index,
-        calificacion,
-        hoverCalificacion,
+        rate,
+        hoverRate,
         onMouseEnter,
         onMouseLeave,
-        onGuardarCalificacion,
+        onSaveRate,
     } = props;
 
-    const relleno = React.useMemo(() => {
-        if (hoverCalificacion >= index) {
+    const rateStar = React.useMemo(() => {
+        if (hoverRate >= index) {
             return '#000000';
-        } else if (!hoverCalificacion && calificacion >= index) {
+        } else if (!hoverRate && rate >= index) {
             return '#000000';
         }
         return 'none';
-    }, [calificacion, hoverCalificacion, index]);
+    }, [rate, hoverRate, index]);
     return (
-        <div onMouseEnter={() => onMouseEnter(index)} onMouseLeave={() => onMouseLeave()} onClick={() => onGuardarCalificacion(index)} className='cursor-pointer'>
-            <IconoEstrella fill={relleno} />
+        <div onMouseEnter={() => onMouseEnter(index)} onMouseLeave={() => onMouseLeave()} onClick={() => onSaveRate(index)} className='cursor-pointer'>
+            <StarSVG fill={rateStar} />
         </div>
     )
 }
 
 const Home = () => {
 
-    // Hooks para render de información de la api 
+    // Hooks para render de información del API
 
-    function numeroAleatorio(min, max) {
+    function randomNumber(min, max) {
         return Math.floor((Math.random() * (max - min)) + min);
     }
     // Hooks para cambio de estado 
-    const [titulo, setTitulo] = useState('')
-    const [imagen, setImagen] = useState('')
+    const [title, setTitle] = useState('')
+    const [img, setImg] = useState('')
     const [alt, setAlt] = useState('')
-    const [dia, setDia] = useState('')
-    const [mes, setMes] = useState('')
-    const [anio, setAnio] = useState('')
+    const [day, setDay] = useState('')
+    const [month, setMonth] = useState('')
+    const [year, setYear] = useState('')
 
     // Estado de Estrellas
-    const [calificar, setCalificar] = useState(0);
-    const [hoverCalificar, setHoverCalificar] = useState(0);
+    const [rate, setRate] = useState(0);
+    const [hoverRate, setHoverRate] = useState(0);
     const onMouseEnter = (index) => {
-        setHoverCalificar(index);
+        setHoverRate(index);
     }
     // Funciones para el cambio de estado de las estrellas
     const onMouseLeave = () => {
-        setHoverCalificar(0);
+        setHoverRate(0);
     }
-    const onGuardarCalificacion = (index) => {
-        setCalificar(index)
+    const onSaveRate = (index) => {
+        setRate(index)
     }
-    const recorrido = [1, 2, 3, 4, 5];
+    const quantity = [1, 2, 3, 4, 5];
 
     // Petición Aleatoria
     useEffect(() => {
-        const aleatorio = numeroAleatorio(1, 700)
-        axios.get(`https://afternoon-springs-24137.herokuapp.com/http://xkcd.com/${aleatorio}/info.0.json`)
+        const random = randomNumber(1, 700)
+        axios.get(`https://afternoon-springs-24137.herokuapp.com/http://xkcd.com/${random}/info.0.json`)
             .then(response => {
-                setTitulo(response.data.title);
-                setImagen(response.data.img);
+                setTitle(response.data.title);
+                setImg(response.data.img);
                 setAlt(response.data.alt);
-                setDia(response.data.day);
-                setMes(response.data.month);
-                setAnio(response.data.year);
+                setDay(response.data.day);
+                setMonth(response.data.month);
+                setYear(response.data.year);
             })
             .catch((error) => {
-                console.log('No se pudo hacer la peticion', error);
+                console.log('Error', error);
             })
     }, [])
-    // Funcion de Petición Aleatoria a la Api 
-    const cambiarComic = () => {
-        const aleatorio = numeroAleatorio(1, 700)
-        axios.get(`https://afternoon-springs-24137.herokuapp.com/http://xkcd.com/${aleatorio}/info.0.json`)
+    // Funcion de Petición Aleatoria al API
+    const changeComic = () => {
+        const random = randomNumber(1, 700)
+        axios.get(`https://afternoon-springs-24137.herokuapp.com/http://xkcd.com/${random}/info.0.json`)
             .then(response => {
-                setTitulo(response.data.title);
-                setImagen(response.data.img);
+                setTitle(response.data.title);
+                setImg(response.data.img);
                 setAlt(response.data.alt);
-                setDia(response.data.day);
-                setMes(response.data.month);
-                setAnio(response.data.year);
-                setCalificar(0);
-                setHoverCalificar(0);
+                setDay(response.data.day);
+                setMonth(response.data.month);
+                setYear(response.data.year);
+                setRate(0);
+                setHoverRate(0);
             })
             .catch((error) => {
-                console.log('No se pudo hacer la peticion', error);
+                console.log('Error', error);
             })
     }
     return (
@@ -153,19 +153,19 @@ const Home = () => {
             <Container fluid className='d-lg-none'>
                 <Row>
                     <Col xs={12} className='title-container'>
-                        <h1 className='comic-title'>{titulo}</h1>
+                        <h1 className='comic-title'>{title}</h1>
                     </Col>
                 </Row>
                 <Row>
                     <StyledImgContainer>
-                        <StyledImgResponsive src={imagen} />
+                        <StyledImgResponsive src={img} />
                     </StyledImgContainer>
                     <Row>
                         <Col xs={12} className='description-container'>
                             <p style={{ fontWeight: '600', marginRight: '10px' }}>Published:</p>
-                            <p>{dia}/</p>
-                            <p>{mes}/</p>
-                            <p>{anio}</p>
+                            <p>{day}/</p>
+                            <p>{month}/</p>
+                            <p>{year}</p>
                         </Col>
                     </Row>
                 </Row>
@@ -174,52 +174,52 @@ const Home = () => {
                 </Row>
                 <Row>
                     <StyledStarContainer style={{ display: 'flex' }}>
-                        {recorrido.map((index) => {
+                        {quantity.map((index) => {
                             return (
-                                <Calificacion index={index} calificacion={calificar} hoverCalificacion={hoverCalificar} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onGuardarCalificacion={onGuardarCalificacion} key = {index}/>
+                                <Rate index={index} rate={rate} hoverRate={hoverRate} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onSaveRate={onSaveRate} key = {index}/>
                             )
                         })}
                     </StyledStarContainer>
                 </Row>
                 <Row className='button-container'>
-                    <Button onClick={cambiarComic} className='button-info'>Random</Button>
+                    <Button onClick={changeComic} className='button-info'>Random</Button>
                 </Row>
             </Container>
             {/* Desktop */}
             <StyledContainerDesktop fluid className='d-none d-lg-flex' >
                 <Row>
                     <StyledImgContainer>
-                        <StyledImgResponsive src={imagen} />
+                        <StyledImgResponsive src={img} />
                     </StyledImgContainer>
                     <Row>
                         <Col xs={12} className='description-container'>
                             <p style={{ fontWeight: '600', marginRight: '10px' }}>Published:</p>
-                            <p>{dia}/</p>
-                            <p>{mes}/</p>
-                            <p>{anio}</p>
+                            <p>{day}/</p>
+                            <p>{month}/</p>
+                            <p>{year}</p>
                         </Col>
                     </Row>
                 </Row>
                 <div style={{ marginLeft: '20px' }}>
                     <Row>
                         <Col xs={12} className='title-container'>
-                            <h1 className='comic-title'>{titulo}</h1>
+                            <h1 className='comic-title'>{title}</h1>
                         </Col>
                     </Row>
                     <Row>
-                        <p className='comic-description'>{alt.substring(0, 120)}</p>
+                        <p className='comic-description'>{alt.substring(0, 100)}</p>
                     </Row>
                     <Row>
                         <StyledStarContainer>
-                            {recorrido.map((index) => {
+                            {quantity.map((index) => {
                                 return (
-                                    <Calificacion index={index} calificacion={calificar} hoverCalificacion={hoverCalificar} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onGuardarCalificacion={onGuardarCalificacion} key = {index}/>
+                                    <Rate index={index} rate={rate} hoverRate={hoverRate} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onSaveRate={onSaveRate} key = {index}/>
                                 )
                             })}
                         </StyledStarContainer>
                     </Row>
                     <Row className='button-container'>
-                        <Button onClick={cambiarComic} className='button-info'>Random</Button>
+                        <Button onClick={changeComic} className='button-info'>Random</Button>
                     </Row>
                 </div>
             </StyledContainerDesktop>
