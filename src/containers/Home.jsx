@@ -90,12 +90,9 @@ const Home = () => {
         return Math.floor((Math.random() * (max - min)) + min);
     }
     // Hooks para cambio de estado 
-    const [title, setTitle] = useState('')
-    const [img, setImg] = useState('')
-    const [alt, setAlt] = useState('')
-    const [day, setDay] = useState('')
-    const [month, setMonth] = useState('')
-    const [year, setYear] = useState('')
+    const [title, setName] = useState('')
+    const [img, setImage] = useState('')
+    const [alt, setSpecie] = useState('')
 
     // Estado de Estrellas
     const [rate, setRate] = useState(0);
@@ -115,35 +112,23 @@ const Home = () => {
     // Petición Aleatoria
     useEffect(() => {
         const random = randomNumber(1, 700)
-        axios.get(`https://afternoon-springs-24137.herokuapp.com/http://xkcd.com/${random}/info.0.json`)
-            .then(response => {
-                setTitle(response.data.title);
-                setImg(response.data.img);
-                setAlt(response.data.alt);
-                setDay(response.data.day);
-                setMonth(response.data.month);
-                setYear(response.data.year);
-            })
-            .catch((error) => {
-                console.log('Error', error);
-            })
+        axios.get(`https://rickandmortyapi.com/api/character/${random}`)
+        .then(response => {
+            setName(response.data.name);
+            setImage(response.data.image);
+            setSpecie(response.data.species);
+        })
     }, [])
     // Funcion de Petición Aleatoria al API
     const changeComic = () => {
         const random = randomNumber(1, 700)
-        axios.get(`https://afternoon-springs-24137.herokuapp.com/http://xkcd.com/${random}/info.0.json`)
+        axios.get(`https://rickandmortyapi.com/api/character/${random}`)
             .then(response => {
-                setTitle(response.data.title);
-                setImg(response.data.img);
-                setAlt(response.data.alt);
-                setDay(response.data.day);
-                setMonth(response.data.month);
-                setYear(response.data.year);
+                setName(response.data.name);
+                setImage(response.data.image);
+                setSpecie(response.data.species);
                 setRate(0);
                 setHoverRate(0);
-            })
-            .catch((error) => {
-                console.log('Error', error);
             })
     }
     return (
@@ -160,14 +145,6 @@ const Home = () => {
                     <StyledImgContainer>
                         <StyledImgResponsive src={img} />
                     </StyledImgContainer>
-                    <Row>
-                        <Col xs={12} className='description-container'>
-                            <p style={{ fontWeight: '600', marginRight: '10px' }}>Published:</p>
-                            <p>{day}/</p>
-                            <p>{month}/</p>
-                            <p>{year}</p>
-                        </Col>
-                    </Row>
                 </Row>
                 <Row>
                     <p className='comic-description'>{alt.substring(0, 120)}</p>
@@ -176,7 +153,7 @@ const Home = () => {
                     <StyledStarContainer style={{ display: 'flex' }}>
                         {quantity.map((index) => {
                             return (
-                                <Rate index={index} rate={rate} hoverRate={hoverRate} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onSaveRate={onSaveRate} key = {index}/>
+                                <Rate index={index} rate={rate} hoverRate={hoverRate} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onSaveRate={onSaveRate} key={index} />
                             )
                         })}
                     </StyledStarContainer>
@@ -191,14 +168,6 @@ const Home = () => {
                     <StyledImgContainer>
                         <StyledImgResponsive src={img} />
                     </StyledImgContainer>
-                    <Row>
-                        <Col xs={12} className='description-container'>
-                            <p style={{ fontWeight: '600', marginRight: '10px' }}>Published:</p>
-                            <p>{day}/</p>
-                            <p>{month}/</p>
-                            <p>{year}</p>
-                        </Col>
-                    </Row>
                 </Row>
                 <div style={{ marginLeft: '20px' }}>
                     <Row>
@@ -213,7 +182,7 @@ const Home = () => {
                         <StyledStarContainer>
                             {quantity.map((index) => {
                                 return (
-                                    <Rate index={index} rate={rate} hoverRate={hoverRate} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onSaveRate={onSaveRate} key = {index}/>
+                                    <Rate index={index} rate={rate} hoverRate={hoverRate} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onSaveRate={onSaveRate} key={index} />
                                 )
                             })}
                         </StyledStarContainer>
