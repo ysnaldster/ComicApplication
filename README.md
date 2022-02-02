@@ -24,8 +24,8 @@ Por otra parte, es importante resaltar que se implemento el boton "Random", el c
     a. GitHub -- Consultar el perfil de Ysnaldo J. López H. 
     b. Correo Electrónico -- Este tiene una función especial lo cual permite aperturar un modal en donde se puede observar la información del Gmail. 
     c. Twitter -- Acceder al perfil de Ysnaldo J. López H. de la plataforma mencionada. 
-
-Acionalmente se deja el link de consulta a las metricas de WakaTime manifestadas en el desarrollo del aplicativo. 
+    
+Adicionalmente, se deja el link de consulta a las metricas de WakaTime manifestadas en el desarrollo del aplicativo. 
 
 Link de Consulta: https://i.ibb.co/ZBxSG5m/Metricas-comic-App.png
 
